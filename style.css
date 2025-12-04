@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* 헤더 */
+.header {
+    background: linear-gradient(135deg, #5B9BD5 0%, #4A8BC2 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* 메인 컨테이너 */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 30px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* 왼쪽: 키워드 리스트 */
+.sidebar {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #5B9BD5;
+}
+
+.keyword-list {
+    list-style: none;
+}
+
+.keyword-list li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.keyword-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.keyword-list li.active {
+    background-color: #5B9BD5;
+    color: white;
+    border-left-color: #3A7BA8;
+}
+
+.keyword-list li .rank {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* 오른쪽: 상세 내용 */
+.content {
+    flex: 2;
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.summary {
+    margin-bottom: 30px;
+}
+
+.summary h3 {
+    color: #5B9BD5;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.summary p {
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+}
+
+.links h3 {
+    color: #5B9BD5;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links li {
+    margin-bottom: 10px;
+}
+
+.links a {
+    color: #5B9BD5;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #3A7BA8;
+    text-decoration: underline;
+}
+
+.links a::before {
+    content: "• ";
+    margin-right: 8px;
+}
+
+/* 하단: 게임 버튼 (화면 하단 고정) */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.game-button {
+    background: linear-gradient(135deg, #5B9BD5 0%, #4A8BC2 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(91, 155, 213, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.game-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(91, 155, 213, 0.6);
+}
+
+.game-button:active {
+    transform: translateY(0);
+}
+
+/* 컨텐츠가 버튼에 가려지지 않도록 여백 추가 */
+body {
+    padding-bottom: 100px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .content {
+        order: 1;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .game-button {
+        width: 90%;
+        font-size: 1rem;
+    }
+}
