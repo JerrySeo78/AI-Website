@@ -1,15 +1,15 @@
-// Google Drive JSON 파일 URL
-const TRENDS_JSON_URL = 'https://drive.google.com/uc?export=download&id=1yXFiRHPMyWwmpvMDeVn2gzm6WbT8ZlAt';
+// GAS Web App URL (Drive 프록시)
+const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbwEQkpQNPic-7b87d19QGLNiZlWWmnUu-5OU6Ibm0FHlBsPvpC3lXL5bGAn5c5aThnM/exec';
 
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', async function() {
     await loadTrendsData();
 });
 
-// Google Drive에서 트렌드 데이터 로드
+// GAS에서 트렌드 데이터 로드 (GAS가 Drive에서 읽어옴)
 async function loadTrendsData() {
     try {
-        const response = await fetch(TRENDS_JSON_URL);
+        const response = await fetch(GAS_API_URL);
         const data = await response.json();
         
         if (data && data.length > 0) {
