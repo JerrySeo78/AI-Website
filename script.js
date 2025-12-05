@@ -43,7 +43,7 @@ function useSampleData() {
         {
             rank: 1,
             keyword: "데이터 로딩 중...",
-            summary: "실시간 트렌드 데이터를 불러오는 중입니다. 잠시만 기다려주세요.",
+            summary: "실시간 트렌드TOP10 데이터를 불러오는 중입니다. 잠시만 기다려주세요.",
             links: []
         }
     ];
@@ -84,7 +84,7 @@ function showTrendDetail(index) {
 
     // 제목 업데이트
     const title = document.getElementById('contentTitle');
-    title.textContent = `Why is ${trend.keyword} #${trend.rank} Today?`;
+    title.textContent = `지금 No.${trend.rank} ${trend.keyword} 요약`;
 
     // 요약 업데이트
     const summary = document.getElementById('summaryText');
