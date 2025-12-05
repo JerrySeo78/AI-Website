@@ -84,7 +84,7 @@ function showTrendDetail(index) {
 
     // 제목 업데이트
     const title = document.getElementById('contentTitle');
-    title.textContent = `지금 No.${trend.rank} ${trend.keyword} 요약`;
+    title.textContent = `실시간 검색 순위 No.${trend.rank} ${trend.keyword} AI 요약`;
 
     // 요약 업데이트
     const summary = document.getElementById('summaryText');
